@@ -1,0 +1,31 @@
+# .NET
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+
+# Node / pnpm
+**/node_modules/
+**/dist/
+**/.vite/
+pnpm-debug.log*
+
+# Local env / secrets
+.env
+.env.local
+appsettings.Local.json
+
+# Tool workspace
+.mimocode/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+.*/
+
+!.gitignore
+!.github/
