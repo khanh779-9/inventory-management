@@ -1,8 +1,10 @@
 ﻿using System.Text;
 using Inventory_Man_Sys_Be.Data;
-using Inventory_Man_Sys_Be.Domain;
+using Inventory_Man_Sys_Be.Mapping;
+using Inventory_Man_Sys_Be.Models;
 using Inventory_Man_Sys_Be.Middleware;
-using Inventory_Man_Sys_Be.Services;
+using Inventory_Man_Sys_Be.Services.Implementations;
+using Inventory_Man_Sys_Be.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Data.SqlClient;
@@ -77,8 +79,9 @@ builder.Services.AddRateLimiter(options =>
 });
 
 builder.Services.AddScoped<IPasswordHasher<AppUser>, PasswordHasher<AppUser>>();
-builder.Services.AddScoped<AuthService>();
-builder.Services.AddScoped<InventoryService>();
+builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>());
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IInventoryService, InventoryService>();
 builder.Services.AddCors(options => options.AddPolicy("Frontend", policy => policy
     .WithOrigins(builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? ["http://localhost:5173"])
     .AllowAnyHeader().AllowAnyMethod()));

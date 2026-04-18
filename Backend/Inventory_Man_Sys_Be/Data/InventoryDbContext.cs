@@ -1,4 +1,4 @@
-﻿using Inventory_Man_Sys_Be.Domain;
+﻿using Inventory_Man_Sys_Be.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory_Man_Sys_Be.Data;

@@ -6,6 +6,7 @@
     <RootNamespace>Inventory_Man_Sys_Be</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.14" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.14" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.3.1" />
