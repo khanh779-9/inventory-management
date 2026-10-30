@@ -1,10 +1,7 @@
 # Chạy nguyên hệ thống: SQL Server + API + UI.
 # Lần đầu: docker compose up --build -d, xem log API: docker compose logs -f api
 # UI: http://localhost:4173   API: http://localhost:5080   Swagger: http://localhost:5080/swagger
-#
-# Dùng ngoài máy local thì tạo file .env cạnh file này (không commit) và đặt:
-#   SQLSERVER_SA_PASSWORD=<mật khẩu riêng>
-#   JWT_KEY=<key riêng, tối thiểu 32 byte>
+
 services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
